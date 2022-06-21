@@ -20,11 +20,14 @@ using UnityEngine;
 public class WeekFourActivitiesTemp : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float Fahrenheit = 150;
+    private float fahrenheit = 100;
     private float celcius;
+    private float windChill;
         void Start()
     {
-        celcius = (Fahrenheit - 32) * 5 / 9;
+        
+        celcius = (fahrenheit - 32) * 5 / 9;
+        windChill = celcius % 5;
         Debug.Log("The Temperature in celcius is: " + celcius);
 
         if (celcius < 0)
@@ -45,6 +48,8 @@ public class WeekFourActivitiesTemp : MonoBehaviour
             Debug.Log("It's hot today!");
         else if (celcius > 39)
             Debug.Log("It is scorching!!!");
+
+        Debug.Log("The Windchill is " + windChill);
     }
 
     
