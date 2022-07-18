@@ -26,7 +26,15 @@ namespace MitchellGascoigne
             // / is divide
             float dollarsPerHour;
             dollarsPerHour = costOfGame / hoursPlayed;
-            Debug.Log("My favourite game is " + favouriteGame + " I have played it for " + hoursPlayed + " hours, and it cost me $" + costOfGame + " Therefore, my value of dollars per hour is: " + dollarsPerHour);
+            Debug.Log("My favourite game is " + favouriteGame + " I have played it for " + hoursPlayed +
+                " hours, and it cost me $" + costOfGame + " Therefore, my value of dollars per hour is: " + dollarsPerHour);
+
+            agility = Random.Range(0, statsPool);
+            intelligence = Random.Range(0, statsPool1);
+            strength = Random.Range(0, statsPool2);
+            statsPool1 = statsPool - agility;
+            statsPool2 = statsPool1 - intelligence;
+
         }
         // Update is called once per frame
         void Update()
@@ -39,24 +47,17 @@ namespace MitchellGascoigne
                 Debug.Log("The number was less than three or greater than 5");
             else if (randomNumber < 5)
                 Debug.Log("The number was greater than one and less than 5");
-        }
 
-        public void Character() 
-        {
-            agility = Random.Range(0,statsPool);
-            intelligence = Random.Range(0, statsPool1);
-            strength = Random.Range(0, statsPool2);   
-            statsPool1 = statsPool - agility;
-            statsPool2 = statsPool1 - intelligence;
 
             Debug.Log("Agility = " + agility);
             Debug.Log("intelligence = " + intelligence);
             Debug.Log("strength = " + strength);
             Debug.Log("statsPool = " + statsPool);
+        }
 
             //Finally, each time we assign a random value, let’s remove that from our stat pool; i.e. strength gets the random number 7;
             //we take this away from our statpool, there are now 13 stat points left, agility now gets a random number between 0 and 13.
 
-        }
+       
     }
 }
