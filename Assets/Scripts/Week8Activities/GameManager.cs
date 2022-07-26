@@ -20,7 +20,7 @@ namespace MitchellGascoigne
                //   {
 
                //   }
-                }
+                
                 if(playerOne != null)
                 {
                     // the adjustment
