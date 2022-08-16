@@ -41,7 +41,7 @@ namespace MitchellGascoigne
         public void QuitGame()
         {
             Debug.Log("Quitting the Game!");
-
+            Application.Quit();
         }
     }
 }
